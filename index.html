@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitForce - Modern Gym</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<!-- ====LINK TO CSS FILE==== -->
+ <link rel="stylesheet" href="./style.css">
+
+
+<body>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-gray-900 bg-opacity-95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="showSection('home')">
+                    <i class="fas fa-dumbbell text-2xl gradient-text"></i>
+                    <span class="text-2xl font-bold gradient-text">FitForce</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <span class="nav-link" onclick="showSection('home')">Home</span>
+                    <span class="nav-link" onclick="showSection('classes')">Classes</span>
+                    <span class="nav-link" onclick="showSection('trainers')">Trainers</span>
+                    <span class="nav-link" onclick="showSection('membership')">Membership</span>
+                    <span class="nav-link" onclick="showSection('contact')">Contact</span>
+                </div>
+
+                <button class="gradient-button text-white px-6 py-2 rounded-full font-semibold hidden md:block">
+                    Join Now
+                </button>
+
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-white text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4 space-y-2">
+                <div class="block w-full text-left px-4 py-2 hover:bg-gray-800 rounded cursor-pointer" onclick="showSection('home'); toggleMobileMenu()">Home</div>
+                <div class="block w-full text-left px-4 py-2 hover:bg-gray-800 rounded cursor-pointer" onclick="showSection('classes'); toggleMobileMenu()">Classes</div>
+                <div class="block w-full text-left px-4 py-2 hover:bg-gray-800 rounded cursor-pointer" onclick="showSection('trainers'); toggleMobileMenu()">Trainers</div>
+                <div class="block w-full text-left px-4 py-2 hover:bg-gray-800 rounded cursor-pointer" onclick="showSection('membership'); toggleMobileMenu()">Membership</div>
+                <div class="block w-full text-left px-4 py-2 hover:bg-gray-800 rounded cursor-pointer" onclick="showSection('contact'); toggleMobileMenu()">Contact</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="section active">
+        <!-- Hero Section -->
+        <div class="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+            <div class="absolute inset-0 opacity-30">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-cyan-600 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-white space-y-8">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                            Transform Your <span class="gradient-text">Body & Mind</span>
+                        </h1>
+                        <p class="text-xl text-gray-300">
+                            Join FitForce and experience the ultimate fitness transformation with state-of-the-art equipment, expert trainers, and a supportive community.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="gradient-button text-white px-8 py-4 rounded-full font-bold text-lg">
+                                Start Your Journey
+                            </button>
+                            <button class="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-full font-bold text-lg hover:bg-cyan-400 hover:text-gray-900 transition">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-96 md:h-full">
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-3xl opacity-20 blur-2xl"></div>
+                        <div class="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 border border-gray-700 h-full flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-user-secret text-7xl gradient-text mb-4"></i>
+                                <p class="text-gray-300">Premium Fitness Experience</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="bg-gray-900 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center gradient-text mb-16">Why Choose FitForce</h2>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-box text-center">
+                        <i class="fas fa-dumbbell text-4xl gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Modern Equipment</h3>
+                        <p class="text-gray-400">State-of-the-art fitness equipment updated regularly to ensure the best workout experience.</p>
+                    </div>
+
+                    <div class="feature-box text-center">
+                        <i class="fas fa-user-tie text-4xl gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Expert Trainers</h3>
+                        <p class="text-gray-400">Certified fitness professionals ready to guide you through your fitness journey.</p>
+                    </div>
+
+                    <div class="feature-box text-center">
+                        <i class="fas fa-heart text-4xl gradient-text mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-3">Health Programs</h3>
+                        <p class="text-gray-400">Customized fitness programs tailored to your specific goals and fitness level.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="bg-gradient-to-r from-cyan-600 to-purple-600 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <h3 class="text-4xl font-bold text-white mb-2">5000+</h3>
+                        <p class="text-white text-opacity-90">Active Members</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold text-white mb-2">50+</h3>
+                        <p class="text-white text-opacity-90">Expert Trainers</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold text-white mb-2">100+</h3>
+                        <p class="text-white text-opacity-90">Classes Weekly</p>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-bold text-white mb-2">24/7</h3>
+                        <p class="text-white text-opacity-90">Open Access</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLASSES SECTION -->
+    <section id="classes" class="section bg-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center gradient-text mb-16">Our Classes</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="class-card card-hover">
+                    <i class="fas fa-running text-5xl gradient-text mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-3">Cardio Blast</h3>
+                    <p class="text-gray-400 mb-4">High-intensity cardio workouts designed to boost your endurance and burn calories.</p>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-300"><i class="fas fa-clock text-cyan-400 mr-2"></i>60 Minutes</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-users text-cyan-400 mr-2"></i>Max 20 Members</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-calendar text-cyan-400 mr-2"></i>Mon, Wed, Fri</p>
+                    </div>
+                    <button class="gradient-button text-white w-full py-2 rounded-lg font-semibold">Enroll Now</button>
+                </div>
+
+                <div class="class-card card-hover">
+                    <i class="fas fa-weight-hanging text-5xl gradient-text mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-3">Strength Training</h3>
+                    <p class="text-gray-400 mb-4">Build muscle and increase strength with progressive resistance training programs.</p>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-300"><i class="fas fa-clock text-cyan-400 mr-2"></i>75 Minutes</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-users text-cyan-400 mr-2"></i>Max 15 Members</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-calendar text-cyan-400 mr-2"></i>Tue, Thu, Sat</p>
+                    </div>
+                    <button class="gradient-button text-white w-full py-2 rounded-lg font-semibold">Enroll Now</button>
+                </div>
+
+                <div class="class-card card-hover">
+                    <i class="fas fa-spa text-5xl gradient-text mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-3">Yoga & Flexibility</h3>
+                    <p class="text-gray-400 mb-4">Improve flexibility, balance, and mental clarity through guided yoga sessions.</p>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-300"><i class="fas fa-clock text-cyan-400 mr-2"></i>45 Minutes</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-users text-cyan-400 mr-2"></i>Max 25 Members</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-calendar text-cyan-400 mr-2"></i>Daily</p>
+                    </div>
+                    <button class="gradient-button text-white w-full py-2 rounded-lg font-semibold">Enroll Now</button>
+                </div>
+
+                <div class="class-card card-hover">
+                    <i class="fas fa-fire text-5xl gradient-text mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-3">HIIT Training</h3>
+                    <p class="text-gray-400 mb-4">High-intensity interval training for maximum results in minimal time.</p>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-300"><i class="fas fa-clock text-cyan-400 mr-2"></i>50 Minutes</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-users text-cyan-400 mr-2"></i>Max 18 Members</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-calendar text-cyan-400 mr-2"></i>Mon, Wed, Fri</p>
+                    </div>
+                    <button class="gradient-button text-white w-full py-2 rounded-lg font-semibold">Enroll Now</button>
+                </div>
+
+                <div class="class-card card-hover">
+                    <i class="fas fa-bicycle text-5xl gradient-text mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-3">Spin Class</h3>
+                    <p class="text-gray-400 mb-4">Indoor cycling experience with energetic music and motivating instructors.</p>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-300"><i class="fas fa-clock text-cyan-400 mr-2"></i>45 Minutes</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-users text-cyan-400 mr-2"></i>Max 30 Members</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-calendar text-cyan-400 mr-2"></i>Tue, Thu, Sat</p>
+                    </div>
+                    <button class="gradient-button text-white w-full py-2 rounded-lg font-semibold">Enroll Now</button>
+                </div>
+
+                <div class="class-card card-hover">
+                    <i class="fas fa-fist-raised text-5xl gradient-text mb-4"></i>
+                    <h3 class="text-2xl font-bold text-white mb-3">Boxing Fitness</h3>
+                    <p class="text-gray-400 mb-4">Learn boxing techniques while getting an amazing full-body workout.</p>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-300"><i class="fas fa-clock text-cyan-400 mr-2"></i>60 Minutes</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-users text-cyan-400 mr-2"></i>Max 12 Members</p>
+                        <p class="text-sm text-gray-300"><i class="fas fa-calendar text-cyan-400 mr-2"></i>Mon, Wed, Fri</p>
+                    </div>
+                    <button class="gradient-button text-white w-full py-2 rounded-lg font-semibold">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINERS SECTION -->
+    <section id="trainers" class="section bg-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center gradient-text mb-16">Meet Our Expert Trainers</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="trainer-card card-hover">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-circle text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Alex Johnson</h3>
+                    <p class="text-cyan-400 font-semibold mb-2">Strength Coach</p>
+                    <p class="text-gray-400 text-sm mb-4">10+ years experience in strength training and bodybuilding.</p>
+                    <div class="flex justify-center space-x-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="trainer-card card-hover">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-circle text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Sarah Williams</h3>
+                    <p class="text-cyan-400 font-semibold mb-2">Cardio Specialist</p>
+                    <p class="text-gray-400 text-sm mb-4">Certified in HIIT and cardio fitness with passion for endurance.</p>
+                    <div class="flex justify-center space-x-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="trainer-card card-hover">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-circle text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Mike Chen</h3>
+                    <p class="text-cyan-400 font-semibold mb-2">Yoga Instructor</p>
+                    <p class="text-gray-400 text-sm mb-4">Certified yoga trainer specializing in flexibility and mindfulness.</p>
+                    <div class="flex justify-center space-x-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+
+                <div class="trainer-card card-hover">
+                    <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-user-circle text-5xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Emma Davis</h3>
+                    <p class="text-cyan-400 font-semibold mb-2">Nutrition Coach</p>
+                    <p class="text-gray-400 text-sm mb-4">Expert in sports nutrition and personalized diet planning.</p>
+                    <div class="flex justify-center space-x-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="mt-20">
+                <h3 class="text-3xl font-bold text-center text-white mb-12">What Our Members Say</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">John Smith</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"FitForce transformed my fitness journey! The trainers are incredibly supportive and the facilities are top-notch."</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">Lisa Anderson</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"The variety of classes and equipment available is amazing. I've never been more motivated to work out!"</p>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">Michael Brown</p>
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                    <i class="fas fa-star text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"Best gym I've been to! The community is welcoming and the 24/7 access is perfect for my schedule."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEMBERSHIP SECTION -->
+    <section id="membership" class="section bg-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center gradient-text mb-4">Membership Plans</h2>
+            <p class="text-center text-gray-400 mb-16">Choose the perfect plan for your fitness goals</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="class-card card-hover relative">
+                    <h3 class="text-2xl font-bold text-white mb-2">Basic</h3>
+                    <div class="price-badge mb-6">$29/month</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Gym Access (Weekdays)
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Basic Equipment
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Locker Access
+                        </li>
+                        <li class="text-gray-400 flex items-center opacity-50">
+                            <i class="fas fa-times text-gray-500 mr-3"></i>
+                            Personal Training
+                        </li>
+                        <li class="text-gray-400 flex items-center opacity-50">
+                            <i class="fas fa-times text-gray-500 mr-3"></i>
+                            Group Classes
+                        </li>
+                    </ul>
+                    <button class="gradient-button text-white w-full py-3 rounded-lg font-semibold">Get Started</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="class-card card-hover border-2 border-cyan-400 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        POPULAR
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Pro</h3>
+                    <div class="price-badge mb-6">$59/month</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            24/7 Gym Access
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            All Equipment
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Unlimited Classes
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            2 Personal Sessions
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Nutrition Consultation
+                        </li>
+                    </ul>
+                    <button class="gradient-button text-white w-full py-3 rounded-lg font-semibold">Get Started</button>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="class-card card-hover">
+                    <h3 class="text-2xl font-bold text-white mb-2">Elite</h3>
+                    <div class="price-badge mb-6">$99/month</div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            24/7 Gym Access
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            All Equipment
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Unlimited Classes
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Unlimited Personal Training
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-check text-cyan-400 mr-3"></i>
+                            Priority Support
+                        </li>
+                    </ul>
+                    <button class="gradient-button text-white w-full py-3 rounded-lg font-semibold">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section bg-gray-900 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center gradient-text mb-16">Get In Touch</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="class-card">
+                    <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+                    <form class="space-y-4" onsubmit="handleSubmit(event)">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Subject" class="w-full bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="5" class="w-full bg-gray-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400" required></textarea>
+                        </div>
+                        <button type="submit" class="gradient-button text-white w-full py-3 rounded-lg font-semibold">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="class-card">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-map-marker-alt text-2xl gradient-text mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Location</h4>
+                                <p class="text-gray-400">123 Fitness Street<br>New York, NY 10001<br>United States</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="class-card">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-phone text-2xl gradient-text mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Phone</h4>
+                                <p class="text-gray-400">+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="class-card">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-envelope text-2xl gradient-text mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Email</h4>
+                                <p class="text-gray-400">info@fitforce.com<br>support@fitforce.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="class-card">
+                        <div class="flex items-start space-x-4">
+                            <i class="fas fa-clock text-2xl gradient-text mt-1"></i>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2">Hours</h4>
+                                <p class="text-gray-400">Monday - Friday: 6:00 AM - 10:00 PM<br>Saturday - Sunday: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="class-card">
+                        <h4 class="text-xl font-bold text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <button class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cyan-500 transition">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </button>
+                            <button class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cyan-500 transition">
+                                <i class="fab fa-twitter text-white"></i>
+                            </button>
+                            <button class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cyan-500 transition">
+                                <i class="fab fa-instagram text-white"></i>
+                            </button>
+                            <button class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-cyan-500 transition">
+                                <i class="fab fa-youtube text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4 flex items-center space-x-2">
+                        <i class="fas fa-dumbbell gradient-text"></i>
+                        <span class="gradient-text">FitForce</span>
+                    </h4>
+                    <p class="text-gray-400 text-sm">Transform your body and mind with FitForce - your ultimate fitness destination.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><span class="hover:text-cyan-400 cursor-pointer" onclick="showSection('home')">Home</span></li>
+                        <li><span class="hover:text-cyan-400 cursor-pointer" onclick="showSection('classes')">Classes</span></li>
+                        <li><span class="hover:text-cyan-400 cursor-pointer" onclick="showSection('trainers')">Trainers</span></li>
+                        <li><span class="hover:text-cyan-400 cursor-pointer" onclick="showSection('membership')">Membership</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><span class="hover:text-cyan-400 cursor-pointer">FAQ</span></li>
+                        <li><span class="hover:text-cyan-400 cursor-pointer">Privacy Policy</span></li>
+                        <li><span class="hover:text-cyan-400 cursor-pointer">Terms of Service</span></li>
+                        <li><span class="hover:text-cyan-400 cursor-pointer" onclick="showSection('contact')">Contact Us</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-3">Subscribe to get updates on new classes and offers.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="flex-1 bg-gray-800 text-white px-3 py-2 rounded-l-lg focus:outline-none text-sm">
+                        <button class="gradient-button px-4 py-2 rounded-r-lg">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 FitForce. All rights reserved. | Designed with <i class="fas fa-heart text-red-500"></i> for your fitness journey</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==== LINK TO JS FILE ==== -->
+   <script src="./script.js"></script>
+</body>
+</html>
