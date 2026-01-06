@@ -18,11 +18,6 @@ function showSection(sectionId) {
             mobileMenu.classList.toggle('hidden');
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            event.target.reset();
-        }
 
         // Smooth scroll animation on page load
         window.addEventListener('load', () => {
