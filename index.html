@@ -688,18 +688,15 @@
             </h3>
             <form
               class="space-y-4"
-              name="contact"
+              action="https://api.web3forms.com/submit"
               method="post"
-              data-netlify="true"
-              netlify-honeypot="bot-false"
               onsubmit="handleSubmit(event)"
             >
-              <!-- netlify-honeypot="bot-false" -->
-
-              <p class="hidden" style="display: none">
-                <input type="hidden" name="form-name" value="contact" />
-              </p>
-
+              <input
+                type="hidden"
+                name="access_key"
+                value="44faed84-ceed-427d-a3d6-fabb10671cff"
+              />
               <div>
                 <input
                   type="text"
